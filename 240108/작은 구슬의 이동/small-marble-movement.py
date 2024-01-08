@@ -9,7 +9,7 @@ mapper = {
     'R' : 1,
     'L' : 2
 }
-dxs, dys = [0, 1, -1, 0], [1, 0, 0, -1]
+dxs, dys = [0, 1, -1, 0], [-1, 0, 0, 1]
 dir = mapper[d]
 def in_range(x, y):
     return x >= 1 and x <= n and y >= 1 and y <= n
