@@ -1,4 +1,3 @@
-days = [30, 31, 29]
 seasons = ["Spring", "Summer", "Fall", "Winter"]
 seasonsMapping = {
     3 : 0,
@@ -46,8 +45,8 @@ def check_season(Y, M, D):
     if seasonNum == -1 or dayNum == -1:
         return -1
     if M == 2 and is_leap_year(Y):
-        dayNum = 2
-    if D < 1 or D > daysMapping[dayNum]:
+        dayNum = 29
+    if D < 1 or D > dayNum:
         return -1
     print(seasons[seasonNum])
 
