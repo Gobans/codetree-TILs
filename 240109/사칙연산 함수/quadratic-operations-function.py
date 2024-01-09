@@ -13,12 +13,15 @@ a = int(a)
 c = int(c)
 if o == '+':
     answer = plus(a, c)
+    print(answer)
 elif o == '-':
     answer = minus(a, c)
+    print(answer)
 elif o == '*':
     answer = multiple(a, c)
+    print(answer)
 elif o == '/':
     answer = divide(a, c)
+    print(answer)
 else:
     print("False")
-print(answer)
