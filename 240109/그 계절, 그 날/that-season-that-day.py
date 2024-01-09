@@ -13,20 +13,17 @@ seasonsMapping = {
     1 : 3,
     2 : 3
 }
-daysMapping = {
-    1 : 31,
-    2 : 28,
-    3 : 31,
-    4 : 30,
-    5 : 31,
-    6 : 30,
-    7 : 31,
-    8 : 31,
-    9 : 30,
-    10 : 31,
-    11 : 30,
-    12 : 31
-}
+def find_mx_date(month, year):
+    if month in [1, 3, 5, 7, 8, 10, 12]:
+        return 31
+    elif month in [4, 6, 9, 11]:
+        return 30
+    elif month == 2:
+        if is_leap_year(year):
+            return 29
+        else:
+            return 28
+
 def is_leap_year(Y):
     if Y%4 == 0:
         if Y%100 == 0:
@@ -38,15 +35,11 @@ def is_leap_year(Y):
     return False
 
 def check_season(Y, M, D):
-    if M < 1 or M > 12:
-        return -1
-    seasonNum = seasonsMapping.get(M, -1)
-    dayNum = daysMapping.get(M, -1)
-    if M == 2 and is_leap_year(Y):
-        dayNum = 29
-    if D < 1 or D > dayNum:
-        return -1
-    print(seasons[seasonNum])
+    mx_date = find_mx_date(M, Y)
+    if mx_date is None or D > mx_date:
+        print(-1)
+    else:
+        print(seasons[seasonsMapping.get(M)])
 
 Y, M, D = map(int, input().split())
 check_season(Y, M, D)
