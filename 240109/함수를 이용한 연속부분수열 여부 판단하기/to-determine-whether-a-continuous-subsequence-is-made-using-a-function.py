@@ -6,7 +6,6 @@ def find_partitial_array(A, B):
     n1 = len(A)
     n2 = len(B)
     for i in range(n1-n2+1):
-        print(A[i:i+n2])
         if A[i:i+n2] == B:
             return True
     return False
