@@ -7,21 +7,22 @@ def divide(a, b):
 def multiple(a, b):
     return a*b
 
+def calculate(a, o, c):
+    if o == '+':
+        answer = plus(a, c)
+    elif o == '-':
+        answer = minus(a, c)
+    elif o == '*':
+        answer = multiple(a, c)
+    elif o == '/':
+        answer = divide(a, c)
+    else:
+        print("False")
+        return
+    print(str(a) + " " + str(o) + " " + str(c) + " = " + str(answer), end = '')
+
+
 a, o, c = input().split()
-print(a + " " + o + " " + c + " = ", end = '')
 a = int(a)
 c = int(c)
-if o == '+':
-    answer = plus(a, c)
-    print(answer)
-elif o == '-':
-    answer = minus(a, c)
-    print(answer)
-elif o == '*':
-    answer = multiple(a, c)
-    print(answer)
-elif o == '/':
-    answer = divide(a, c)
-    print(answer)
-else:
-    print("False")
+calculate(a, o, c)
