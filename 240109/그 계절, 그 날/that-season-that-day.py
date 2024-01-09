@@ -46,8 +46,6 @@ def check_season(Y, M, D):
         dayNum = 29
     if D < 1 or D > dayNum:
         return -1
-    print(dayNum)
-    print(seasonNum)
     print(seasons[seasonNum])
 
 Y, M, D = map(int, input().split())
