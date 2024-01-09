@@ -41,8 +41,10 @@ def is_leap_year(Y):
 def check_season(Y, M, D):
     if M < 1 or M > 12:
         return -1
-    seasonNum = seasonsMapping[M]
-    dayNum = daysMapping[M]
+    seasonNum = seasonsMapping.get(M, -1)
+    dayNum = daysMapping.get(M, -1)
+    if seasonNum == -1 or dayNum == -1:
+        return -1
     if M == 2 and is_leap_year(Y):
         dayNum = 2
     if D < 1 or D > daysMapping[dayNum]:
