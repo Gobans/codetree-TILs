@@ -12,12 +12,6 @@ for c in command:
             l -= 1
         else:
             r += 1
-for _ in range(l):
-    tmp = s[0]
-    s = s[1:]
-    s += tmp
-for _ in range(r):
-    tmp = s[-1]
-    s = s[:-2]
-    s = tmp + s
+s = s[l:] + s[:-r] if r > 0 else s[l:]
+
 print(s)
