@@ -10,4 +10,4 @@ for i in range(n):
     if arr[i][0] == c:
        cnt += 1 
        length += len(arr[i])
-print(cnt, "{:.2f}".format(round(length // cnt, 2)))
+print(cnt, "{:.2f}".format(round(length / cnt, 2)))
