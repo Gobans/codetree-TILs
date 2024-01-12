@@ -1,7 +1,3 @@
-def gcd(n, m):
-    if m == 0:
-        return n
-    return gcd(m, n%m)
 n = int(input())
 l = list(map(int, input().split()))
 def find_min(k):
@@ -14,4 +10,4 @@ def find_min(k):
         print(k)
     else:
         find_min(k+1)
-find_min(1)
+find_min(max(l))
