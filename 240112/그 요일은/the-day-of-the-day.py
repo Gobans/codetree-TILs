@@ -14,7 +14,7 @@ def count_days_between_dates(m1, d1, m2, d2, target_day):
 
     current_month = m1
     current_day = d1
-    now_day_index = d1
+    now_day_index = 0
     target_day_index = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].index(target_day)
 
     count = 0
