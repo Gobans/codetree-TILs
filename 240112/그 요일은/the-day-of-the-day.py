@@ -20,9 +20,7 @@ def count_days_between_dates(m1, d1, m2, d2, target_day):
     count = 0
 
     while current_month != m2 or current_day != d2:
-        if current_day == 1:
-            target_day_index = (target_day_index + 1) % 7
-
+        
         if target_day_index == (current_day - 1) % 7:
             count += 1
 
