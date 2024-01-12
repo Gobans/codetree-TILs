@@ -8,9 +8,10 @@ def find_min(k):
     find = True
     for i in l:
         if k%i != 0:
-            find_min(k+1)
             find = False
             break
     if find:
         print(k)
+    else:
+        find_min(k+1)
 find_min(1)
