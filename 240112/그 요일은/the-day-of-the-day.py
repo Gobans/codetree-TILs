@@ -11,7 +11,7 @@ for m in range(m1, m2+1):
     else:
         r = days[m]
     remainDays += r
-dofs = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+dofs = ["", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 answer = 0
 answer += remainDays//7
 if dof in dofs[:remainDays%7+1]:
