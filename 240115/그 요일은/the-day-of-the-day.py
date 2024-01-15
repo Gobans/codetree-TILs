@@ -16,13 +16,12 @@ def count_days_between_dates(m1, d1, m2, d2, target_day):
     now_days_in_month = days_in_month(m1)
     
     while True:
-        current_index = (current_index + 1) % 7
-
         if current_index == target_index:
             count += 1
 
         if m1 == m2 and d1 == d2:
             break
+        current_index = (current_index + 1) % 7
         d1 += 1
         if d1 > now_days_in_month:
             d1 = 1
