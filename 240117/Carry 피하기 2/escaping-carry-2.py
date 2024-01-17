@@ -7,7 +7,7 @@ def is_carry(a, b, c):
         b_digit = b % 10
         c_digit = c % 10
 
-        if a_digit + b_digit + c_digit > 10:
+        if a_digit + b_digit + c_digit >= 10:
             return -1
         
         a //= 10
