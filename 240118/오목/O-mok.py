@@ -20,7 +20,7 @@ def is_valid(i, j, color):
     if vertical_cnt == 5:
         return (i+2, j)
     
-    # 우측 대각선
+    # 우측하단 대각선
     right_diagonal_cnt = 0
     for k in range(5):
         if i+k <= 19 and j+k <= 19 and board[i+k][j+k] == color:
@@ -29,16 +29,16 @@ def is_valid(i, j, color):
             break
     if right_diagonal_cnt == 5:
         return (i+2, j+2)
-    return (0, 0)
 
+    # 좌측하단 대각선
     left_diagonal_cnt = 0
     for k in range(0, -5, -1):
-        if i+k <= 19 and j+k <= 19 and board[i+k][j+k] == color:
+        if i-k <= 19 and j+k >= 1 and board[i-k][j+k] == color:
             left_diagonal_cnt += 1
         else:
             break
     if left_diagonal_cnt == 5:
-        return (i-2, j-2)
+        return (i+2, j-2)
     return (0, 0)
 
 for _ in range(19):
