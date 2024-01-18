@@ -62,4 +62,5 @@ for i in range(1, 19):
 
 
 print(result)
-print(result_coordinate[0], result_coordinate[1])
+if result != 0:
+    print(result_coordinate[0], result_coordinate[1])
