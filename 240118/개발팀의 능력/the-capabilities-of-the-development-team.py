@@ -5,7 +5,7 @@ for i in range(4):
     for j in range(i+1, 5):
         team1 = l[i] + l[j]
         for k in range(4):
-            for m in range(i+1, 5):
+            for m in range(k+1, 5):
                 if k not in [i, j] and m not in [i, j]:
                     team2 = l[k] + l[m]
                     for n in range(5):
