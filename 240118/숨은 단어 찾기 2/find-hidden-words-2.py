@@ -47,8 +47,6 @@ def is_valid(i, j):
 for _ in range(N):
     l = list(map(str, input()))
     board.append([0] + l)
-for i in range(N+1):
-    print(*board[i])
 result = 0
 
 for i in range(1, N+1):
