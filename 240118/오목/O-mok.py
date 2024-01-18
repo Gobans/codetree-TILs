@@ -4,7 +4,7 @@ def is_valid(i, j, color):
     # 가로 (오른쪽만 탐색해도 괜찮음)
     horizon_cnt = 0
     for k in range(j, i+5):
-        if i <= 19 and board[i][k] == color:
+        if k <= 19 and board[i][k] == color:
             horizon_cnt += 1
         else:
             break
@@ -13,7 +13,7 @@ def is_valid(i, j, color):
     # 세로
     vertical_cnt = 0
     for k in range(i, i+5):
-        if i <= 19 and board[k][j] == color:
+        if k <= 19 and board[k][j] == color:
             vertical_cnt += 1
         else:
             break
@@ -48,8 +48,8 @@ for _ in range(19):
 result = 0
 result_coordinate = (0, 0)
 
-for i in range(1, 19):
-    for j in range(1, 19):
+for i in range(1, 20):
+    for j in range(1, 20):
         if board[i][j] != 0:
             result_coordinate = is_valid(i, j, board[i][j])
             if result_coordinate != (0, 0):
