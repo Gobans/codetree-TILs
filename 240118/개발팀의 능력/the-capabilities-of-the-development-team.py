@@ -16,4 +16,7 @@ for i in range(4):
                             max_team = max(team1, team2, team3)
                             min_team = min(team1, team2, team3)
                             min_diff = min(min_diff, max_team - min_team)
-print(min_diff)
+if min_diff == sys.maxsize:
+    print("-1")
+else:
+    print(min_diff)
