@@ -10,6 +10,15 @@ def is_valid(i, j, color):
             break
     if horizon_cnt == 5:
         return (i, j + 2)
+    # 세로
+    vertical_cnt = 0
+    for k in range(i, i+5):
+        if i <= 19 and board[k][j] == color:
+            vertical_cnt += 1
+        else:
+            break
+    if vertical_cnt == 5:
+        return (i+2, j)
     
     # 대각선
     diagonal_cnt = 0
