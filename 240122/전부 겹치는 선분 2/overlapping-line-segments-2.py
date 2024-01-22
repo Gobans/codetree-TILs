@@ -15,7 +15,7 @@ for _ in range(n):
 
 def is_overlapped(x1, x2):
     for i in range(x1, x2+1):
-        if my_dict[i] >=2:
+        if my_dict[i] >= n-1:
             return True
     return False
 
