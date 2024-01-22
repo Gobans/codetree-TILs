@@ -9,6 +9,8 @@ def running(distance, speed, time):
     if distance == x and speed == 1:
         min_time = min(min_time, time)
         return
+    elif distance = x and speed > 1:
+        return
     
     now_distance = distance + speed
     running(now_distance, speed, time + 1)
