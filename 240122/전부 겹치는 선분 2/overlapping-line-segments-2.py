@@ -25,7 +25,9 @@ for i in range(n):
     x1, x2 = lines[i]
     for j in range(x1, x2+1):
         my_dict[j] -= 1
-    for j in range(i+1, n):
+    for j in range(n):
+        if j == i:
+            continue
         x3, x4 = lines[j]
         if not is_overlapped(x3, x4):
             overlapped = False
