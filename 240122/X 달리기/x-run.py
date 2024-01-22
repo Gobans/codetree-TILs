@@ -4,7 +4,7 @@ min_time = sys.maxsize
 
 def running(distance, speed, time):
     global min_time
-    if distance > x:
+    if distance > x or min_time <= time:
         return
     if distance == x and speed == 1:
         min_time = min(min_time, time)
