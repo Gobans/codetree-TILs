@@ -1,22 +1,27 @@
-import sys
-x = int(input())
-min_time = sys.maxsize
-
-def running(distance, speed, time):
-    global min_time
-    if distance > x or min_time <= time:
-        return
-    if distance == x and speed == 1:
-        min_time = min(min_time, time)
-        return
-    elif distance == x and speed > 1:
-        return
+X = int(input())
+def find_shortest_time(X):
+    # Time, speed, and distance initialized
+    time = 0
+    speed = 1
+    distance = 0
     
-    now_distance = distance + speed
-    running(now_distance, speed, time + 1)
-    running(now_distance, speed + 1, time + 1)
-    if speed > 1:
-        running(now_distance, speed -1, time + 1)
+    # Loop until the distance is less than the target distance X
+    while distance < X:
+        time += 1  # Increment time
+        distance += speed  # Update distance
+        
+        # Decide whether to increase, decrease, or maintain speed
+        # If distance + speed + 1 is less than or equal to X, we can consider increasing speed
+        # But we need to make sure we can decrease back to 1 m/s for the final moment
+        # Calculate remaining distance after current step
+        remaining_distance = X - distance
+        
+        # If the next step overshoots, maintain or decrease speed
+        if speed > 1 and (remaining_distance <= speed or remaining_distance > ((speed * (speed + 1)) / 2)):
+            speed -= 1  # Decelerate if speed is greater than 1 and conditions met
+        elif remaining_distance > ((speed * (speed + 1)) / 2):
+            speed += 1  # Accelerate if we won't overshoot in the next steps
+    
+    return time
 
-running(0, 1, 1)
-print(min_time)
+print(find_shortest_time(X) - 1)
