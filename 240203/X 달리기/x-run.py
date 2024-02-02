@@ -8,11 +8,11 @@ def is_Possible(speed):
     remainDistance = n - dist
     dist_sum = 0
     test_speed = speed
-    for _ in range(remainDistance):
+    dist_sum += test_speed
+    while test_speed > 1:
+        test_speed -= 1
         dist_sum += test_speed
-        if test_speed > 1:
-            test_speed -= 1
-    if dist_sum - remainDistance <= 1:
+    if dist_sum <= remainDistance:
         return True
     return False
 
