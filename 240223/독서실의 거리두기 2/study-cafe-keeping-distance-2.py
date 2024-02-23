@@ -7,12 +7,15 @@ def find_farthest_distance_coordinate():
     x, y = 0, 1
     cnt = 0
     for i in range(len(line)):
-        if i == len(line) - 1:
-            if farthest_distance // 2 < cnt:
-                x = tempX
-                y = i
-        elif line[i] == 1 or i == len(line) - 1:
-            farthest_distance = max(farthest_distance, cnt)
+        if line[i] == 1:
+            converted_distance = farthest_distance
+            converted_cnt = cnt
+            if x == 0:
+                converted_distance *= 2
+            if i == len(line) - 1 and line[i] == 0:
+                converted_cnt *= 2
+            if converted_distance < converted_cnt:
+                farthest_distance = cnt
             if farthest_distance == cnt:
                 x = tempX
                 y = i
