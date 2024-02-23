@@ -4,13 +4,13 @@ N = int(input())
 dict = {}
 for i in range(N):
     a, b = map(int, input().split())
-    for i in range(3):
+    for i in range(1,4):
         rock = i
-        for j in range(3):
+        for j in range(1, 4):
             if j == rock:
                 continue
             scissor = j
-            for k in range(3):
+            for k in range(1, 4):
                 if k == scissor:
                     continue
                 papaer = k
