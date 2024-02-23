@@ -26,7 +26,7 @@ def find_nearest_distance():
     nearest_distance = len(line)
     cnt = 0
     x = -1
-    for i in range(len(line)):    
+    for i in range(len(line)):
         if line[i] == 1:
             if x != -1:
                 nearest_distance = min(nearest_distance, cnt)
@@ -37,7 +37,7 @@ def find_nearest_distance():
     return nearest_distance + 1
 
 x, y = find_farthest_distance_coordinate()
-if y == len(line) -1:
+if y == len(line) -1 and line[y] == 0:
     line[y] = 1
 elif x == 0 and line[0] == 0:
     line[0] = 1
