@@ -6,13 +6,19 @@ def find_farthest_distance_coordinate():
     tempX = 0
     x, y = 0, 1
     cnt = 0
+    isFrontEmpty = False
+    isLastEmpty = False
+    if line[0] == 0:
+        isFrontEmpty = True
+    if line[-1] == 0:
+        isLastEmpty = True
     for i in range(len(line)):
-        if line[i] == 1:
+        if line[i] == 1 or i == len(line) - 1:
             converted_distance = farthest_distance
             converted_cnt = cnt
-            if x == 0:
+            if x == 0 and isFrontEmpty:
                 converted_distance *= 2
-            if i == len(line) - 1 and line[i] == 0:
+            if i == len(line) - 1 and isLastEmpty:
                 converted_cnt *= 2
             if converted_distance < converted_cnt:
                 farthest_distance = cnt
