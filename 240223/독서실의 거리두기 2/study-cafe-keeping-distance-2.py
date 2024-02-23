@@ -25,11 +25,14 @@ def find_farthest_distance_coordinate():
 def find_nearest_distance():
     nearest_distance = len(line)
     cnt = 0
+    x = 0
     for i in range(len(line)):
-        if (line[i] == 1 or i == len(line) - 1) and i != 0:
-            if i == len(line) - 1 and line[i] == 0:
-                cnt += 1
-            nearest_distance = min(nearest_distance, cnt)
+        if i == 0 or i == len(line) - 1:
+            continue
+        elif (line[i] == 1 or i == len(line) - 1) and i != 0:
+            if x != 0:
+                nearest_distance = min(nearest_distance, cnt)
+            x = i
             cnt = 0
         else:
             cnt += 1
