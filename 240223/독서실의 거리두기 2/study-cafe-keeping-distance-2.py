@@ -3,7 +3,7 @@ line = list(map(int, input()))
 
 def find_farthest_distance_coordinate():
     farthest_distance = 0
-    tempX = 1
+    tempX = 0
     x, y = 0, 1
     cnt = 0
     for i in range(len(line)):
